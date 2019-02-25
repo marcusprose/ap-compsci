@@ -1,4 +1,4 @@
-public class Queens {
+public class QueensProblem {
   public static boolean isLegal(int[][] board, int r, int c){
     for(int i = 0; i < r; i++){
       if(board[i][c] == 1){
