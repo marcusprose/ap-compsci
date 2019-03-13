@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -6,14 +7,13 @@ public class Sorting {
 
 	public static void main(String[] args) {
 		ArrayList<String> ignore = new ArrayList<String>();
-		String[] algorithms = {"bubble", "selection", "insertion", "merge"};
+		String[] algorithms = {"bubble", "selection", "insertion", "merge", "quick"};
 		System.out.print("Size      ");
 		for (String a : algorithms) {
 			System.out.printf("%15s", a);
 		}
 		System.out.println();
-		printArr(reverseArr(20));
-		for(int num = 100; num < 10000000; num = num * 2){
+		for(int num = 1; num < 100000000; num = num * 2){
 			System.out.printf("%-10d", num);
 			int[] randomArray = randomArr(num);
 			// int[] randomArray = reverseArr(num);
@@ -121,6 +121,9 @@ public class Sorting {
 		}
 	}
 
+	public static void quick(int[] arr) {
+		Arrays.sort(arr);
+	}
 	/* Runs the indicated sorting algorithm on a
 	 * copy of the provided array. Returns the
 	 * time taken in nanoseconds, or -1 if the
